@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: mysql:8
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ladmia
+    ports:
+      - "6033:3306"
+    volumes:
+      - C:\Users\ladmi\OneDrive\Bureau\db-data:/var/lib/mysql
+    networks:
+      - db
+
+networks:
+  db:
+    external: true
